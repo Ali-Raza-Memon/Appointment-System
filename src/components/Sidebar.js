@@ -7,7 +7,12 @@ import change from '../SVGs/change.png'
 import meeting from '../SVGs/meeting.png'
 import cancel2 from '../SVGs/cancel.png'
 import Appointments from "./Appointments";
-import {Route, Routes, Link} from "react-router-dom";
+import {Routes, Route, Link} from "react-router-dom";
+import ChangeAppointments from "./ChangeAppointments";
+import Meetings from "./Meetings";
+import Dashboard from "./Dashboard";
+import CancelAppointments from "./CancelAppointments";
+import LogOut from "./LogOut";
 
 
 const Sidebar =() => {
@@ -28,7 +33,7 @@ const Sidebar =() => {
 
                     <a className='list-group-item py-2'>
                         <i className='bi bi-speedometer2 fs-5 me-3'></i>
-                        <span className='fs-7'>Dashboard</span>
+                        <span className='fs-7'><Link to="/dashboard" >Dashboard </Link></span>
                     </a>
 
                     <a className='list-group-item py-2'>
@@ -40,24 +45,24 @@ const Sidebar =() => {
 
                     <a className='list-group-item py-2'>
                         <img src={change} alt="A log of Appointments" className='me-3 fs-7' />
-                        <span className='fs-7'>Change App</span>
+                        <span className='fs-9'><Link to="/change-appoints" >Change Appoint </Link> </span>
                     </a>
 
                     <a className='list-group-item py-2'>
                         <img src={meeting} alt="A log of Appointments" className='me-3 fs-7' />
 
-                        <span className='fs-7' >Meetings</span>
+                        <span className='fs-7' ><Link to="/all-meetings" >Meetings </Link></span>
                     </a>
 
                     <a className='list-group-item py-2'>
                         <img src={cancel2} alt="A log of Appointments" className='me-3 fs-7' />
-                        <span className='fs-7'>Cancel App</span>
+                        <span className='fs-9'><Link to="/cancel-appoints" >Cancel Appoint </Link></span>
                     </a>
 
                     <a className='list-group-item py-2'>
                         <i className='bi bi-power fs-7 me-3'></i>
 
-                        <span className='fs-7'>Log Out</span>
+                        <span className='fs-7'><Link to="/log-out" >Log Out </Link></span>
                     </a>
 
                 </div>
@@ -66,9 +71,6 @@ const Sidebar =() => {
             </div>
 
 
-                <Routes>
-                    <Route path='/appointments' element = { <Appointments /> } />
-                </Routes>
 
             </>
 
